@@ -1,14 +1,14 @@
-# Flora: Your AI Garden Assistant
+# TechGenius: AI-Powered Tech Support
 
 ## Description
-Flora is an interactive website that provides AI-powered gardening advice and plant care assistance. It features a chatbot interface for instant gardening help, along with informative sections on various gardening tips, plant recommendations, and landscaping ideas.
+TechGenius is an interactive website that provides AI-powered tech support and advice. It features a chatbot interface for instant tech assistance, along with informative sections on various tech-related services and tips.
 
 ## Features
-- AI Chatbot for instant gardening advice
-- Plant recommendations based on user's climate and preferences
-- Garden planning assistance
-- Pest and disease identification
-- Seasonal gardening tips and news blog
+- AI Chatbot for instant tech support
+- Product recommendations
+- Compatibility checker
+- Code assistance
+- Tech tips and news blog
 - User testimonials
 
 ## Technologies Used
@@ -28,7 +28,7 @@ This site is designed to be deployed on GitHub Pages. To deploy:
 2. Go to the repository settings on GitHub.
 3. Navigate to the "Pages" section.
 4. Select the main branch as the source.
-5. The site will be published at `http://[OSOSerious].github.io/flora/`
+5. The site will be published at `https://[your-username].github.io/[repository-name]/`
 
 ## File Structure
 - `index.html`: Main HTML file
@@ -36,4 +36,11 @@ This site is designed to be deployed on GitHub Pages. To deploy:
 - `script.js`: JavaScript file for interactive features and chatbot functionality
 
 ## Customization
-- To change the color scheme, modify the CSS variables in the `:root` selector in `style.cs
+- To change the color scheme, modify the CSS variables in the `:root` selector in `style.css`.
+- To add or modify chatbot responses, edit the `getAIResponse` function in `script.js`.
+- Update the content in `index.html` to change text, add new sections, or modify existing ones.
+
+## Adding Advertisements
+There's a placeholder comment in the HTML file where you can add your ad code:
+```html
+<!-- Add your ad code here -->
