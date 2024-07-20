@@ -28,7 +28,7 @@ This site is designed to be deployed on GitHub Pages. To deploy:
 2. Go to the repository settings on GitHub.
 3. Navigate to the "Pages" section.
 4. Select the main branch as the source.
-5. The site will be published at `https://[your-username].github.io/flora/`
+5. The site will be published at `http://[OSOSerious].github.io/flora/`
 
 ## File Structure
 - `index.html`: Main HTML file
