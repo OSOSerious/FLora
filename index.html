@@ -3,155 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flora: Your AI Garden Assistant</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tech Connect: Your Interactive Tech Hub | AI-Powered Assistance</title>
+    <meta name="description" content="Tech Connect: Your one-stop hub for all things tech. Get personalized AI assistance, expert advice, tutorials, and stay updated with the latest tech trends.">
+    <meta name="keywords" content="tech support, AI assistant, technology tutorials, tech community, AI tools">
+    <meta name="author" content="Tech Connect">
+    <meta property="og:title" content="Tech Connect: Your Interactive Tech Hub">
+    <meta property="og:description" content="Get AI-powered tech support, tutorials, and join a thriving tech community.">
+    <meta property="og:image" content="https://yourwebsite.com/tech-connect-og-image.jpg">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AdSense code in the header -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #0077be;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ff8c00;
+        }
+        main {
+            margin-top: 60px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('tech-background.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        button, .buy-button, .premium-button, .cta-button {
+            background: #ff8c00;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+        button:hover, .buy-button:hover, .premium-button:hover, .cta-button:hover {
+            background: #e67e00;
+        }
+        section {
+            padding: 3rem 2rem;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0077be;
+        }
+        .feature-grid, .tutorial-grid, .product-grid, .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-item, .tutorial-item, .product-item, .resource-item {
+            background: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover, .tutorial-item:hover, .product-item:hover, .resource-item:hover {
+            transform: translateY(-5px);
+        }
+        .feature-item i, .community-item i, .resource-item i {
+            font-size: 2.5rem;
+            color: #0077be;
+            margin-bottom: 1rem;
+        }
+        #echo-chat {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        #chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 5px;
+        }
+        #user-input {
+            width: 80%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        #send-message {
+            width: 20%;
+            border-radius: 0 5px 5px 0;
+        }
+        .community-features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .community-item {
+            text-align: center;
+            margin: 1rem;
+            padding: 1rem;
+            background: #f4f4f4;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .community-item:hover {
+            transform: translateY(-5px);
+        }
+        #news-feed {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .news-item {
+            background: #f4f4f4;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .premium-benefits {
+            list-style-type: none;
+            padding: 0;
+        }
+        .premium-benefits li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .premium-benefits li::before {
+            content: '✓';
+            color: #0077be;
+            position: absolute;
+            left: 0;
+        }
+        .partner-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .partner-item {
+            text-align: center;
+            margin: 1rem;
+        }
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 1rem auto;
+        }
+        .newsletter-form input[type="email"] {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        .newsletter-form button {
+            border-radius: 0 5px 5px 0;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-icon {
+            font-size: 2rem;
+            color: #0077be;
+            transition: color 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #ff8c00;
+        }
+        #cta {
+            background: #f4f4f4;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 2rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff8c00;
+        }
+        .footer-section ul {
+            list-style-type: none;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #ff8c00;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            .feature-grid, .tutorial-grid, .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <i class="fas fa-leaf"></i>
-            <h1>Flora</h1>
+            <i class="fas fa-microchip"></i>
+            <h1>Tech Connect</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#ai-assistant">Echo AI</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#news">Tech News</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#shop">Shop</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <h2>Welcome to Flora</h2>
-            <p>Your AI-powered garden assistant. Get instant solutions to all your gardening problems!</p>
-            <button id="chat-button">Chat with AI</button>
+            <h2>Welcome to Tech Connect</h2>
+            <p>Your interactive hub for all things related to computers and electronics.</p>
+            <button id="get-started">Get Started</button>
         </section>
 
-        <!-- AdSense ad after hero section -->
+        <!-- AdSense ad -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
              data-ad-slot="XXXXXXXXXX"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
 
         <section id="features">
             <h2>Our AI-Powered Features</h2>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Plant Care Advice</h3>
-                    <p>Get instant advice on caring for your plants with our advanced AI.</p>
+                    <i class="fas fa-robot"></i>
+                    <h3>Echo AI Assistant</h3>
+                    <p>Get instant, personalized tech advice from our advanced AI.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-cloud-sun-rain"></i>
-                    <h3>Weather-Based Recommendations</h3>
-                    <p>Receive personalized gardening tips based on your local weather.</p>
+                    <i class="fas fa-user-cog"></i>
+                    <h3>Personalized Insights</h3>
+                    <p>Receive tailored recommendations based on your tech preferences.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-bug"></i>
-                    <h3>Pest Identification</h3>
-                    <p>Identify and get treatment advice for common garden pests.</p>
+                    <i class="fas fa-tools"></i>
+                    <h3>Interactive Tools</h3>
+                    <p>Access user-friendly tutorials and DIY guides for tech solutions.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Planting Calendar</h3>
-                    <p>Get customized planting schedules for your garden.</p>
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational Content</h3>
+                    <p>Explore a wealth of articles, videos, and expert reviews.</p>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials">
-            <h2>What Our Users Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <p>"Flora's AI solved my tomato plant issues in minutes! I was about to give up on my vegetable garden, but their step-by-step guide saved my crops."</p>
-                    <p class="author">- Emily R., Urban Gardener</p>
-                </div>
-                <div class="testimonial-item">
-                    <p>"As a busy professional, I rely on Flora to keep my indoor plants thriving. It's been a lifesaver, providing quick solutions and reminders for plant care."</p>
-                    <p class="author">- David L., Plant Enthusiast</p>
-                </div>
-                <div class="testimonial-item">
-                    <p>"The plant identification feature is spot-on! It helped me identify and properly care for a rare succulent I received as a gift. Couldn't be happier!"</p>
-                    <p class="author">- Alex K., Succulent Collector</p>
-                </div>
+        <section id="ai-assistant">
+            <h2>Meet Echo, Your Tech AI Assistant</h2>
+            <div id="echo-chat">
+                <div id="chat-messages"></div>
+                <input type="text" id="user-input" placeholder="Ask Echo anything about tech...">
+                <button id="send-message">Send</button>
             </div>
         </section>
 
-        <!-- AdSense ad before blog section -->
+        <!-- AdSense ad -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
              data-ad-slot="XXXXXXXXXX"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
 
-        <section id="blog">
-            <h2>Gardening Tips & News</h2>
-            <div class="blog-grid">
-                <div class="blog-item">
-                    <h3>5 Essential Steps to Start Your Organic Garden</h3>
-                    <p>Learn how to create a thriving organic garden with these simple steps, from soil preparation to pest management.</p>
-                    <a href="#">Read More</a>
+        <section id="tutorials">
+            <h2>Interactive Tutorials</h2>
+            <div class="tutorial-grid">
+                <div class="tutorial-item">
+                    <h3>Setting Up Your Home Network</h3>
+                    <p>Learn how to optimize your home network for speed and security.</p>
+                    <a href="#" class="tutorial-link">Start Tutorial</a>
                 </div>
-                <div class="blog-item">
-                    <h3>The Rise of Smart Gardens: Tech Meets Nature</h3>
-                    <p>Discover how technology is revolutionizing home gardening, from automated watering systems to AI-powered plant care apps.</p>
-                    <a href="#">Read More</a>
+                <div class="tutorial-item">
+                    <h3>Building Your First PC</h3>
+                    <p>Step-by-step guide to assembling your custom computer.</p>
+                    <a href="#" class="tutorial-link">Start Tutorial</a>
                 </div>
-                <div class="blog-item">
-                    <h3>Seasonal Planting Guide: What to Grow Now</h3>
-                    <p>Get expert advice on what to plant this season for a bountiful harvest, whether you're growing vegetables, fruits, or flowers.</p>
-                    <a href="#">Read More</a>
+                <div class="tutorial-item">
+                    <h3>Mastering Smartphone Photography</h3>
+                    <p>Pro tips for taking stunning photos with your smartphone.</p>
+                    <a href="#" class="tutorial-link">Start Tutorial</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: support@floraai.com</p>
-            <p>Phone: (555) 123-4567</p>
+        <section id="community">
+            <h2>Join Our Tech Community</h2>
+            <div class="community-features">
+                <div class="community-item">
+                    <i class="fas fa-comments"></i>
+                    <h3>Discussion Forums</h3>
+                    <p>Engage in discussions with tech enthusiasts worldwide.</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-video"></i>
+                    <h3>Live Webinars</h3>
+                    <p>Participate in interactive sessions with tech experts.</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-users"></i>
+                    <h3>User Groups</h3>
+                    <p>Connect with users who share your tech interests.</p>
+                </div>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 Flora. All rights reserved.</p>
-        <!-- AdSense ad in the footer -->
+        <section id="news">
+            <h2>Latest Tech News</h2>
+            <div id="news-feed">
+                <!-- News items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- AdSense ad -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
              data-ad-slot="XXXXXXXXXX"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
+
+        <section id="resources">
+            <h2>Tech Resource Hub</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <i class="fas fa-book"></i>
+                    <h3>eBooks</h3>
+                    <p>Comprehensive guides on various tech topics.</p>
+                </div>
+                <div class="resource-item">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Whitepapers</h3>
+                    <p>In-depth analysis of emerging technologies.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-item">
+                        <i class="fas fa-percentage"></i>
+                        <h3>Exclusive Offers</h3>
+                        <p>Special discounts on tech products and services.</p>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="shop">
+                <h2>Tech Connect Shop</h2>
+                <p>Discover our curated selection of AI tools and Tech Connect merch!</p>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="ai-toolkit.jpg" alt="AI Developer Toolkit">
+                        <h3>AI Developer Toolkit</h3>
+                        <p>$149.99</p>
+                        <a href="#" class="buy-button">Buy Now</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="tech-connect-hoodie.jpg" alt="Tech Connect Hoodie">
+                        <h3>Tech Connect Hoodie</h3>
+                        <p>$59.99</p>
+                        <a href="#" class="buy-button">Buy Now</a>
+                    </div>
+                </div>
+                <p class="affiliate-disclosure">Some links may be affiliate links. We may earn a commission if you make a purchase.</p>
+            </section>
+    
+            <section id="premium">
+                <h2>Tech Connect Premium Membership</h2>
+                <p>Unlock exclusive benefits with our premium membership!</p>
+                <ul class="premium-benefits">
+                    <li>Advanced AI-powered tech analysis tools</li>
+                    <li>Exclusive webinars with industry leaders</li>
+                    <li>Early access to new features and content</li>
+                    <li>Ad-free experience across our platform</li>
+                    <li>Priority support from our tech experts</li>
+                </ul>
+                <p class="premium-price">Only $14.99/month</p>
+                <a href="#" class="premium-button">Join Premium</a>
+            </section>
+    
+            <!-- AdSense ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+    
+            <section id="partners">
+                <h2>Our Trusted Tech Partners</h2>
+                <div class="partner-grid">
+                    <a href="#" class="partner-item">
+                        <img src="partner1-logo.png" alt="TechGiant Inc.">
+                        <p>TechGiant Inc.</p>
+                    </a>
+                    <a href="#" class="partner-item">
+                        <img src="partner2-logo.png" alt="AI Innovations">
+                        <p>AI Innovations</p>
+                    </a>
+                    <a href="#" class="partner-item">
+                        <img src="partner3-logo.png" alt="Quantum Computing Co.">
+                        <p>Quantum Computing Co.</p>
+                    </a>
+                </div>
+            </section>
+    
+            <section id="newsletter">
+                <h2>Stay Connected with Tech Connect</h2>
+                <p>Subscribe to our newsletter for the latest tech insights, exclusive offers, and updates!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </section>
+    
+            <section id="social-media">
+                <h2>Follow Us on Social Media</h2>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </section>
+    
+            <section id="cta">
+                <h2>Start Your Tech Journey Today!</h2>
+                <p>Join thousands of tech enthusiasts and professionals on Tech Connect.</p>
+                <a href="#" class="cta-button">Start Your Free Trial</a>
+                <p class="cta-subtext">14-day free trial, no credit card required</p>
+            </section>
+        </main>
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#premium">Premium</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@techconnect.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Tech Connect. All rights reserved.</p>
+        </footer>
+    
         <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
+            document.addEventListener('DOMContentLoaded', function() {
+                // Newsletter signup
+                const newsletterForm = document.querySelector('.newsletter-form');
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    console.log(`Newsletter signup: ${email}`);
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                });
+    
+                // Shop interactions
+                const buyButtons = document.querySelectorAll('.buy-button');
+                buyButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const product = this.closest('.product-item').querySelector('h3').textContent;
+                        console.log(`Product purchase initiated: ${product}`);
+                        alert(`Thank you for your interest in ${product}. This feature is coming soon!`);
+                    });
+                });
+    
+                // Premium signup
+                const premiumButton = document.querySelector('.premium-button');
+                premiumButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Premium signup initiated');
+                    alert('Thank you for your interest in our Premium membership. This feature is coming soon!');
+                });
+    
+                // CTA button
+                const ctaButton = document.querySelector('.cta-button');
+                ctaButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Free trial signup initiated');
+                    alert('Thank you for your interest in our free trial. This feature is coming soon!');
+                });
+    
+                // AI Chat functionality
+                const chatMessages = document.getElementById('chat-messages');
+                const userInput = document.getElementById('user-input');
+                const sendMessage = document.getElementById('send-message');
+    
+                sendMessage.addEventListener('click', sendUserMessage);
+                userInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendUserMessage();
+                    }
+                });
+    
+                function sendUserMessage() {
+                    const message = userInput.value.trim();
+                    if (message) {
+                        addMessage('You', message);
+                        userInput.value = '';
+                        setTimeout(() => {
+                            const response = getAIResponse(message);
+                            addMessage('Echo AI', response);
+                        }, 1000);
+                    }
+                }
+    
+                function addMessage(sender, message) {
+                    const messageElement = document.createElement('p');
+                    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+                    chatMessages.appendChild(messageElement);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+    
+                function getAIResponse(message) {
+                    // This is a simple mock AI response. In a real application, you'd integrate with an AI service.
+                    const responses = [
+                        "That's an interesting question about technology. Can you provide more details?",
+                        "I understand you're asking about tech. Let me find some information for you.",
+                        "Great question! Here's what I know about that tech topic...",
+                        "I'm processing your tech query. Give me a moment to analyze the best response.",
+                        "Thanks for your question. Here's my tech insight on that matter..."
+                    ];
+                    return responses[Math.floor(Math.random() * responses.length)];
+                }
+    
+                // Load tech news
+                function loadTechNews() {
+                    const newsContainer = document.getElementById('news-feed');
+                    // Simulating news data (replace with actual API call in a real application)
+                    const newsItems = [
+                        { title: "New AI Breakthrough", summary: "Researchers achieve human-like reasoning in AI models." },
+                        { title: "Tech Giants Announce Collaboration", summary: "Major tech companies join forces on open-source project." },
+                        { title: "Cybersecurity Alert", summary: "New vulnerabilities discovered in popular software. Update now." }
+                    ];
+                    
+                    newsItems.forEach(item => {
+                        const newsElement = document.createElement('div');
+                        newsElement.classList.add('news-item');
+                        newsElement.innerHTML = `<h3>${item.title}</h3><p>${item.summary}</p>`;
+                        newsContainer.appendChild(newsElement);
+                    });
+                }
+    
+                loadTechNews();
+    
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+    
+                // Initialize Google AdSense
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            });
         </script>
-    </footer>
-
-    <div id="chatbot" class="hidden">
-        <div id="chatbot-header">
-            <h3>Flora AI</h3>
-            <button id="close-chat">X</button>
-        </div>
-        <div id="chat-messages"></div>
-        <input type="text" id="user-input" placeholder="Type your gardening question...">
-        <button id="send-message">Send</button>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    </body>
+    </html>
