@@ -107,3 +107,35 @@ module.exports = (server) => {
     });
   });
 };
+// middleware/checkSubscription.js
+const User = require('../models/User');
+
+const checkSubscription = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user.id);
+    if (user.subscriptionTier === 'premium') {
+      next();
+    } else {
+      res.status(403).json({ message: 'Premium subscription required for this feature' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = checkSubscription;
+
+// Use the middleware in routes
+router.get('/premium-feature', checkSubscription, premiumController.accessFeature);
+const checkSubscription = async (req, res, next) => {
+    try {
+      const user = await User.findById(req.user.id);
+      if (user.subscriptionTier === 'premium') {
+        next();
+      } else {
+        res.status(403).json({ message: 'Premium subscription required' });
+      }
+    } catch (error) {
+      res.status(500).json({ message: 'Server error' });
+    }
+  };
